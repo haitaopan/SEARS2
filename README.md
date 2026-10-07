@@ -28,9 +28,9 @@ library(SEARS2)
 design <- sears2_design()
 
 activity_n <- c(D2 = 36, D3 = 36)
-activity_successes <- c(D2 = 18, D3 = 19)
+activity_successes <- c(D2 = 18, D3 = 18)
 tolerability_n <- c(D2 = 36, D3 = 36)
-tolerability_failures <- c(D2 = 5, D3 = 12)
+tolerability_failures <- c(D2 = 4, D3 = 14)
 
 fit <- sears2_analyze(
   design = design,
