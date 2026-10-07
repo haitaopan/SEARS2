@@ -2,9 +2,11 @@ Package: SEARS2
 Type: Package
 Title: SEARS 2.0: Decision-Specific Evidence Authority for Dose Optimization
 Version: 0.1.0
-Authors@R:
+Authors@R: c(
     person("Haitao", "Pan", email = "haitaopan@users.noreply.github.com",
-           role = c("aut", "cre"))
+           role = c("aut", "cre")),
+    person("Xinyue", "Zhao", role = "aut")
+    )
 Description: Implements the SEARS 2.0 evidence-to-dose-decision framework for
     early-phase dose optimization. The package represents decision-specific
     evidence authority, claim-specific posterior evidence, directed dominance,
