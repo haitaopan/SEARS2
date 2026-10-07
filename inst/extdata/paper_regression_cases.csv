@@ -1,0 +1,4 @@
+case,strategy,D2_activity,D3_activity,D2_n,D3_n,D2_tol_fail,D3_tol_fail,D2_tol_n,D3_tol_n,D2_model,D3_model
+authority_transition,sears2,18,19,36,36,5,12,36,36,0.30,0.60
+static_gate,static_model,18,19,36,36,5,12,36,36,0.30,0.60
+retain_example,sears2,18,18,36,36,7,7,36,36,0.48,0.52
