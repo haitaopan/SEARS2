@@ -13,7 +13,6 @@ Description: Implements the SEARS 2.0 evidence-to-dose-decision framework for
     than universal clinical constants.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Depends: R (>= 4.1.0)
 Imports:
     stats
@@ -24,4 +23,6 @@ Suggests:
     remotes
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+URL: https://github.com/haitaopan/SEARS2
+BugReports: https://github.com/haitaopan/SEARS2/issues
 RoxygenNote: 7.3.2
