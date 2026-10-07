@@ -1,0 +1,39 @@
+---
+title: "Authority transition under model risk"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Authority transition under model risk}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+SEARS 2.0 allows a model to be useful for early screening without granting it a permanent final veto.
+
+```{r}
+library(SEARS2)
+sears2_authority("sears2", direct_mature = FALSE, overlapping = TRUE, model_qualified = TRUE)
+sears2_authority("sears2", direct_mature = TRUE, overlapping = TRUE, model_qualified = TRUE)
+sears2_authority("static_model", direct_mature = TRUE, overlapping = TRUE, model_qualified = TRUE)
+```
+
+## Same direct data, different final authority
+
+```{r}
+common <- list(
+  activity_successes = c(D2 = 18, D3 = 18),
+  activity_n = c(D2 = 36, D3 = 36),
+  tolerability_failures = c(D2 = 4, D3 = 14),
+  tolerability_n = c(D2 = 36, D3 = 36),
+  hard_admissible = c(D2 = TRUE, D3 = TRUE),
+  model_activity = c(D2 = 0.30, D3 = 0.60)
+)
+do.call(sears2_analyze, c(list(strategy = "static_model"), common))
+do.call(sears2_analyze, c(list(strategy = "sears2"), common))
+```
+
+In the primary SEARS 2.0 implementation, post-maturity `Support` is contextual rather than quantitative:
+it does not alter the randomized likelihood, dominance probabilities, or final eligibility set.

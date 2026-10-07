@@ -1,0 +1,11 @@
+bibentry(
+  bibtype = "Manual",
+  title = "SEARS2: SEARS 2.0 Decision-Specific Evidence Authority for Dose Optimization",
+  author = c(
+    person("Haitao", "Pan"),
+    person("Xinyue", "Zhao")
+  ),
+  year = "2026",
+  note = "R package version 0.1.0; accompanying SEARS 2.0 manuscript under scientific review",
+  url = "https://github.com/haitaopan/SEARS2"
+)

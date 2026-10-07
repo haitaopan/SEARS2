@@ -1,0 +1,33 @@
+---
+title: "Reproducing the manuscript design"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Reproducing the manuscript design}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+The package ships the frozen design defaults and scenario definitions used in the SEARS 2.0 manuscript.
+
+```{r}
+library(SEARS2)
+sears2_paper_defaults
+sears2_paper_truth
+head(sears2_paper_scenarios)
+```
+
+## Lightweight paper-scenario example
+
+```{r}
+x <- simulate_sears2_trial("C1-M2", strategy = "sears2", seed = 1001)
+x$analysis
+```
+
+The exported simulator in version 0.1.0 is intentionally lightweight and covers the terminal comparative stage.
+It does **not** reproduce the full 180,000-evaluation production engine, pre-randomization safety stage,
+or latent-phenotype endpoint correlation. The scientific-development repository remains the source of truth
+for the accepted manuscript production simulation.

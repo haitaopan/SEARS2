@@ -1,0 +1,38 @@
+---
+title: "Getting started with SEARS 2.0"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with SEARS 2.0}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+SEARS 2.0 separates **permission to learn** from **permission to conclude**.
+The package makes evidence authority explicit and maps mature evidence to one of four final states:
+`SELECT_ONE`, `RETAIN_SET`, `NO_ACCEPTABLE_DOSE`, or `DEFER`.
+
+```{r}
+library(SEARS2)
+d <- sears2_design()
+d
+```
+
+## A two-dose final analysis
+
+```{r}
+fit <- sears2_analyze(
+  strategy = "sears2",
+  activity_successes = c(D2 = 18, D3 = 19),
+  activity_n = c(D2 = 36, D3 = 36),
+  tolerability_failures = c(D2 = 5, D3 = 12),
+  tolerability_n = c(D2 = 36, D3 = 36),
+  hard_admissible = c(D2 = TRUE, D3 = TRUE)
+)
+fit
+```
+
+The paper defaults are examples from the SEARS 2.0 methods study. They are not universal clinical constants.
