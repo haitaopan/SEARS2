@@ -1,5 +1,7 @@
 # SEARS2
 
+[![R-CMD-check](https://github.com/haitaopan/SEARS2/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/haitaopan/SEARS2/actions/workflows/R-CMD-check.yaml)
+
 **SEARS 2.0: Decision-Specific Evidence Authority for Dose Optimization**
 
 SEARS 2.0 is a research-software implementation of an evidence-to-dose-decision
@@ -84,5 +86,14 @@ and under what maturity/applicability conditions.
 
 ## Citation
 
-A formal `CITATION` entry will be added when the manuscript bibliographic record is
-stable. Until then, please cite the SEARS 2.0 manuscript and this GitHub repository.
+The package includes a versioned `CITATION` entry:
+
+```r
+citation("SEARS2")
+```
+
+Please cite the SEARS 2.0 manuscript once its bibliographic record is stable.
+
+## Authors
+
+Haitao Pan (author/creator/maintainer) and Xinyue Zhao (author).
